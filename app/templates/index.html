@@ -1,0 +1,33 @@
+
+<head>
+  {% if title %}
+  <title>{{ title }} - aaPort-OP</title>
+  {% else %}
+  <title>AAWelcome to Port-OP</title>
+  {% endif %}
+</head>
+
+<h1>Choose Your Stocks!</h1>
+    
+    <form action="{{ url_for('ticker') }}" method="post" novalidate>
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.ticker1.label }}<br>
+            {{ form.ticker1(size=32) }}
+        </p>
+        <p>
+            {{ form.ticker2.label }}<br>
+            {{ form.ticker2(size=32) }}
+        </p>
+        <p>
+          {{ form.ticker3.label }}<br>
+          {{ form.ticker3(size=32) }}
+        </p>
+        <p>
+        {{ form.ticker4.label }}<br>
+        {{ form.ticker4(size=32) }}
+        </p>
+        <p>{{ form.submit() }}</p>
+    </form>
+
+

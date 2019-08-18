@@ -1,0 +1,40 @@
+
+
+{% block app_content %}
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+.tg .tg-0lax{text-align:left;vertical-align:top}
+</style>
+
+<html> 
+<body>
+    <table class='tg' > 
+        <caption>Portfolio Optimization Returns 
+            
+        </caption>
+        <tr>
+                <th class = 'tg-baqh'>Return</th>
+                <th class = 'tg-baqh'>Standard Deviation</th>
+                <th class = 'tg-baqh'>Sharpe</th>
+                <th class = 'tg-baqh'>{{ticker_list[0]}}</th>
+                <th class = 'tg-baqh'>{{ticker_list[1]}}</th>
+                <th class = 'tg-baqh'>{{ticker_list[2]}}</th>
+                <th class = 'tg-baqh'>{{ticker_list[3]}}</th>
+        </tr>    
+    {%for datapoint in portfolio_returns%}                
+    <tr> 
+    <td class="tg-0lax">{{datapoint['ret']}}</td>    
+    <td class="tg-0lax">{{datapoint['stdev']}}</td>  
+    <td class="tg-0lax">{{datapoint['sharpe']}}</td>  
+    <td class="tg-0lax">{{datapoint[3]}}</td>  
+    <td class="tg-0lax">{{datapoint[4]}}</td>  
+    <td class="tg-0lax">{{datapoint[5]}}</td>  
+    <td class="tg-0lax">{{datapoint[6]}}</td>             
+    {%endfor%} 
+    </tr> 
+    </table>
+</body>
+</html>
+{% endblock %}
