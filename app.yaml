@@ -1,5 +1,0 @@
-service: default
-runtime: python
-env: flex
-entrypoint: gunicorn -b :$PORT main:appruntime_config:
-  python_version: 3
